@@ -18,3 +18,6 @@ class Bookcase:
         return cls(books)
     
     
+instance = Bookcase.create_bookcase([('book name 1', 'Author 1'), ('Book name 2', 'Author 2')])
+print(instance.books[0])
+print(str(instance.books[1]))

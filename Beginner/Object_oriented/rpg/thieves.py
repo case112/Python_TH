@@ -1,7 +1,7 @@
 import random
 
-from attributes import Agile, Sneaky
 from characters import Character
+from attributes import Agile, Sneaky
 
 
 class Thief(Agile, Sneaky, Character):
