@@ -6,7 +6,7 @@ class Hand(list):
             raise ValueError("You must provide a die class!")
         super().__init__()
         
-        for _ range(size):
+        for _ in range(size):
             self.append(die_class())
             
             
@@ -59,5 +59,8 @@ class YatziHand(Hand):
             6: len(self.sixes),
         }
             
+        
+yh = YatziHand()
+print((yh))
         
         

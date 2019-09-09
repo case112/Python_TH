@@ -28,6 +28,15 @@ class Die:
     
     def __le__(self, other):
         return int(self) < other or int(self) == other
+    
+    def __add_(self, other):
+        return int(self) + other
+    
+    def __radd_(self, other):
+        return int(self) + other
+    
+    def __repr_(self):
+        return str(self.value)
         
 class D6(Die):
     def __init__(self, value=0):
