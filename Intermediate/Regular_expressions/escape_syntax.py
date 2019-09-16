@@ -42,4 +42,13 @@
 #    ^ - specifies, in a pattern, the beginning of the string.
 #    $ - specifies, in a pattern, the end of the string.
 
+###COMPILING AND LOOPS
+
+
+#    re.compile(pattern, flags) - method to pre-compile and save a regular expression pattern, and any associated flags, for later use.
+#    .groupdict() - method to generate a dictionary from a Match object's groups. The keys will be the group names. 
+#    The values will be the results of the patterns in the group.
+#    re.finditer() - method to generate an iterable from the non-overlapping matches of a regular expression. Very handy for for loops.
+#    .group() - method to access the content of a group. 0 or none is the entire match. 1 through how ever many 
+#    groups you have will get that group. Or use a group's name to get it if you're using named groups.
 
