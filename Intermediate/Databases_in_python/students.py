@@ -1,3 +1,5 @@
+#acts like a local database, good exampple for unsderstanding peewee and db queries
+
 from peewee import *
 
 db = SqliteDatabase('students.db')
@@ -34,8 +36,13 @@ def add_students():
             
         
 
-
+def top_student():
+    student = Student.select().order_by(Student.points.desc()).get()  ##last get() gets only the last record otherwie ti just gets the higest score student
+    return student
+    
+    
 if __name__ == '__main__':
     db.connect()
     db.create_tables([Student], safe=True)
     add_students()
+    print('Our top student is: {0.username}.'.format(top_student()))
