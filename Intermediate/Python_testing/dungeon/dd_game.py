@@ -1,3 +1,12 @@
+"""Dungeon game
+Explore a dungeon to find a hidden door and escape. But be careful!
+The grue is hiding somewhere inside!
+
+Created: 2014
+Updated: 2019
+Author: Oskar
+"""
+
 import os
 import random
 
@@ -6,10 +15,18 @@ player = {'location': None, 'path': []}
 
 
 def clear():
+    """Clear the screen."""
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def build_cells(width, height):
+    """Create and return a 'width' x 'height' grid of two-tuples
+    
+    >>> cells = build_cells(2, 2)
+    >>> len(cells)
+    4
+    
+    """
     cells = []
     for y in range(height):
         for x in range(width):
@@ -18,6 +35,16 @@ def build_cells(width, height):
 
 
 def get_locations(cells):
+    """Randomly pick starting locations for monster, door, player
+    
+    >>> cells = build_cells(2, 2)
+    >>> m, d, p = get_locations(cells)
+    >>> m != d and d != p
+    True
+    >>> d in cells
+    True
+    
+    """
     monster = random.choice(cells)
     door = random.choice(cells)
     player = random.choice(cells)
@@ -29,6 +56,14 @@ def get_locations(cells):
 
 
 def get_moves(player):
+    """Based on the tuple of the player's position, return the list of 
+    acceptable moves
+    
+    >>> GAME_DIMENSIONS = (2, 2)
+    >>> get_moves((0, 2))
+    ['RIGHT', 'UP', 'DOWN']
+    
+    """
     x, y = player
     moves = ['LEFT', 'RIGHT', 'UP', 'DOWN']
     if x == 0:
