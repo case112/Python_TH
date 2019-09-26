@@ -36,3 +36,12 @@ Model.create() #will save an in-memory instance of a model to the database and r
 Model.filter(attribute=value) # will get a QuerySet of all instances of the Model that match the attribute values. You can change these values with other comparisons, too, like gte or in.
 
 
+
+python manage.py createsuperuser #will create a new superuser, or a user that's allowed to log into the admin area with all permissions.
+
+admin.site.register(Model) #will register a model with the default admin site, which allows you to edit instances of that model in the admin.
+
+
+
+
+
