@@ -41,7 +41,14 @@ python manage.py createsuperuser #will create a new superuser, or a user that's 
 
 admin.site.register(Model) #will register a model with the default admin site, which allows you to edit instances of that model in the admin.
 
+......
+IntegerField #is a field that holds integers, or whole numbers.
 
+An inline #is a smaller form inside of a larger form. The smaller form represents a related record in the database.
+
+StackedInline #is an inline where each field takes up the full width of the form. Fields are stacked.
+
+TabularInline #is an inline where each field is part of a single row for the form.
 
 
 
