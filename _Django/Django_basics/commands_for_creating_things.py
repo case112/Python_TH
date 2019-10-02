@@ -52,3 +52,18 @@ TabularInline #is an inline where each field is part of a single row for the for
 
 
 
+{% url 'path.to.view' %} to link to a view who's URL doesn't have a name.
+
+Note: This has been removed in Django 1.10 and beyond. If you want to use this feature, be sure to install Django 1.9 or below. You can do that with pip install django<1.10. Better yet, name all of your URLs as shown below.
+
+url(r'pattern', views.view, name='list') to name an URL
+
+{% url 'list' %} to link to a named URL
+
+include('courses.urls', namespace='course') to namespace a group of URLs
+
+{% url 'courses:list' %} to link to a named and namespaced URL
+
+
+
+
