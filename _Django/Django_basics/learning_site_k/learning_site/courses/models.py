@@ -49,7 +49,7 @@ class Quiz(Step):
 class Question(models.Model):
     quiz = models.ForeignKey(Quiz)
     order = models.IntegerField(default=0)
-    promt = models.TextField()
+    prompt = models.TextField()
 
     class Meta:
         ordering = ['order',]
@@ -67,7 +67,7 @@ class MultipleChoiceQuestion(Question):
 
 class TrueFalseQuestion(Question):
     pass
-    
+
 
 class Answer(models.Model):
     question = models.ForeignKey(Question)
