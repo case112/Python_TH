@@ -108,3 +108,28 @@ def edit_question(request, quiz_pk, question_pk):
 
     return render(request, 'courses/question_form.html', {'form': form, 'quiz': question.quiz})
 
+
+
+@login_required
+def answer_form(request, question_pk):
+    question = get_object_or_404(models.Question, pk=question_pk)
+
+    form = forms.AnswerForm()
+    if request.method == 'POST':
+        form = form_class(request.POST)
+        if form.is_valid():
+            answer = form.save(commit=False)
+            answer.question = question
+            answer.save()
+            messages.success(request, "Answer added")
+            return HttpResponseRedirect(question.get_absolute_url())
+    return render(request, 'courses/answer_form.html', {'question': question, 'form': form,})
+
+
+
+
+
+
+
+
+
