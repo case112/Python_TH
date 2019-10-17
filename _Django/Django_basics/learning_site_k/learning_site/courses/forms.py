@@ -31,10 +31,10 @@ class MultipleChoiceQuestionForm(forms.ModelForm):
 
 
 class AnswerForm(forms.ModelForm):
-	class Meta:
-		model = models.Answer
-		fields = [
-			'order',
-			'text',
-			'correct',
-		]
+    class Meta:
+        model = models.Answer
+        fields = [
+            'order',
+            'text',
+            'correct',
+        ]

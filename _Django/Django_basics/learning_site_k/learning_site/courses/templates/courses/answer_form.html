@@ -4,8 +4,8 @@
 {% block title %} New answer | {{ question.prompt }} | {{ question.quiz.course.title }} {{ block.super }}{% endblock %}
 
 {% block breadcrumbs %}
-    <li><a href="{% url 'courses:detail' pk=quiz.course.pk %}">{{ question.quiz.course.title }}</a></li>
-    <li><a href="{% url 'courses:quiz' course_pk=question.quiz.course.pk step_pk=question.quiz.pk %}">{{ quiz.title }}</a></li>
+    <li><a href="{% url 'courses:detail' pk=question.quiz.course.pk %}">{{ question.quiz.course.title }}</a></li>
+    <li><a href="{% url 'courses:quiz' course_pk=question.quiz.course.pk step_pk=question.quiz.pk %}">{{ question.quiz.title }}</a></li>
     <li>{{ question.prompt }}</li>
 {% endblock %}
 
