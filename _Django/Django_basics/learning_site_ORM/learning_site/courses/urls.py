@@ -20,5 +20,6 @@ urlpatterns = [
         views.answer_form, name='edit_answer'),
     url(r'(?P<question_pk>\d+)/create_answer/$',
         views.answer_form, name='create_answer'),
+    url(r'by/(?P<teacher>[-\w]+)/$', views.courses_by_teacher, name='by_teacher'),
     url(r'(?P<pk>\d+)/$', views.course_detail, name='detail'),
 ]
