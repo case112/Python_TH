@@ -169,6 +169,12 @@ def courses_by_teacher(request, teacher):
     return render(request, 'courses/course_list.html', {'courses': courses})
 
 
+def search(request):
+    term = request.GET.get('q')
+    courses = models.Course.objects.filter(title__icontains=term) #searches for the term in teacher, i means to ignore casing
+    return render(request, 'courses/course_list.html', {'courses': courses})
+
+
 
 
 
