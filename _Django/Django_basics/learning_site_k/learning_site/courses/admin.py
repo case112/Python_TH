@@ -31,7 +31,7 @@ class YearListFilter(admin.SimpleListFilter):
 			return queryset.filter(created_at__gte=date(2016, 1, 1),
 								created_at__lte=date(2016, 12, 31))
 
-class AnswerInline(admin.StackedInline):
+class AnswerInline(admin.TabularInline):
     model = models.Answer
 
     
@@ -43,6 +43,12 @@ class CourseAdmin(admin.ModelAdmin):
     list_filter = ['created_at', YearListFilter]
 
     list_display = ['title', 'created_at','time_to_complete']
+
+    class Media:
+    	js = ('js/vendor/markdown.js', 'js/preview.js')
+    	css = {
+    		'all': ('css/preview.css', ),
+    	}
     
     
 class QuestionAdmin(admin.ModelAdmin):
@@ -53,6 +59,8 @@ class QuestionAdmin(admin.ModelAdmin):
     list_display = ['prompt', 'quiz', 'order']
 
     list_editable = ['quiz','order']
+
+    radio_fields = {'quiz': admin.HORIZONTAL}
     
     
 class QuizAdmin(admin.ModelAdmin):
