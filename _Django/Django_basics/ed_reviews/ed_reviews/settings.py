@@ -129,7 +129,10 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_PREMISSION_CLASSES': (
         'rest_framework.premissions.IsAuthenticatedOrReadOnly',
-    )
+    ),
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 5,
+
 }
 
 
