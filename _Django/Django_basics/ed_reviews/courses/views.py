@@ -1,5 +1,6 @@
 from rest_framework import generics
 from rest_framework import viewsets
+from rest_framework import permissions
 from rest_framework.decorators import detail_route
 from rest_framework.response import Response
 from rest_framework import mixins
@@ -43,8 +44,20 @@ class RetrieveUpdateDestroyReview(generics.RetrieveUpdateDestroyAPIView):
 			pk=self.kwargs.get('pk')
 			)
 
+class IsSuperUser(permissions.BasePermission):
+	def has_permission(self, request, view):
+		if request.user.is_superuser:
+			return True
+		else:
+			if request.method == 'DELETE':
+				return False
+
 
 class CourseViewSet(viewsets.ModelViewSet):
+	permission_classes = (
+		IsSuperUser,
+		permissions.DjangoModelPermissions,
+		)
 	queryset = models.Course.objects.all()
 	serializer_class = serializers.CourseSerializer
 
