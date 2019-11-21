@@ -132,4 +132,6 @@ LOGIN_REDIRECT_URL =  'posts:all'
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
 
+AUTH_USER_MODEL = "accounts.User"
+
 
