@@ -41,7 +41,7 @@ class Community(models.Model):
 
     @property
     def good_members(self):
-        return self.memberships.exlude(role=0)
+        return self.memberships.exclude(role=0)
 
 
     class Meta:
