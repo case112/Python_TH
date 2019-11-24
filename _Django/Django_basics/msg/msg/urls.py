@@ -26,4 +26,5 @@ urlpatterns = [
     url(r"^posts/", include("posts.urls", namespace="posts")),
     url(r"^communities/",
         include("communities.urls", namespace="communities")),
+    url(r"^accounts/", include('allauth.urls')),
 ]
