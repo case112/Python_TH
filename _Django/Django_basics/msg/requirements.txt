@@ -10,7 +10,7 @@ django-debug-toolbar==1.5
 idna==2.8
 misaka==2.0.0
 oauthlib==3.1.0
-Pillow==6.2.1
+Pillow==8.1.1
 pycparser==2.14
 python3-openid==3.1.0
 requests==2.22.0
