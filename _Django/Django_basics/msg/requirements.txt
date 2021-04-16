@@ -6,7 +6,7 @@ Django==1.9.9
 django-allauth==0.27.0
 django-bootstrap3==7.0.1
 django-braces==1.9.0
-django-debug-toolbar==1.5
+django-debug-toolbar==1.11.1
 idna==2.8
 misaka==2.0.0
 oauthlib==3.1.0
